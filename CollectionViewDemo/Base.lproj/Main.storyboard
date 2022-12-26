@@ -27,14 +27,28 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lDA-wZ-BUK">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lDA-wZ-BUK" customClass="ColorCollectionViewCell" customModule="CollectionViewDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="180" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7ae-MN-x7i">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrw-Bn-LvR">
+                                                    <rect key="frame" x="12" y="12" width="156" height="156"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zrw-Bn-LvR" secondAttribute="trailing" constant="12" id="5GB-NG-nqW"/>
+                                                <constraint firstItem="zrw-Bn-LvR" firstAttribute="top" secondItem="7ae-MN-x7i" secondAttribute="top" constant="12" id="ErM-9p-MY2"/>
+                                                <constraint firstAttribute="bottom" secondItem="zrw-Bn-LvR" secondAttribute="bottom" constant="12" id="YTR-Rv-7o1"/>
+                                                <constraint firstItem="zrw-Bn-LvR" firstAttribute="leading" secondItem="7ae-MN-x7i" secondAttribute="leading" constant="12" id="lzI-5V-czc"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="180"/>
+                                        <connections>
+                                            <outlet property="innerView" destination="zrw-Bn-LvR" id="I2g-fZ-qJV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="gOj-AE-UBO">

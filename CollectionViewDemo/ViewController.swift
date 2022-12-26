@@ -30,8 +30,12 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = colorData[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ColorCollectionViewCell
+
+        let innerViewColorIndex = (indexPath.item + 2) % colorData.count
+
+        cell.setup(backgroundColor:  colorData[indexPath.item],
+                   innerBackgroundColor: colorData[innerViewColorIndex])
         return cell
     }
 
